@@ -14,7 +14,8 @@ add_executable(rtty ${SRCS})
 target_compile_definitions(rtty PRIVATE _GNU_SOURCE)
 target_compile_options(rtty PRIVATE -O -Wall -Werror --std=gnu99)
 target_include_directories(rtty PRIVATE ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/buffer ${LIBEV_INCLUDE_DIR})
-target_link_libraries(rtty PRIVATE ${LIBEV_LIBRARY} util crypt m)
+#target_link_libraries(rtty PRIVATE ${LIBEV_LIBRARY} util crypt m)
+target_link_libraries(rtty PRIVATE /usr/lib/arm-linux-gnueabihf/libev.a  util crypt m -static-libgcc -static-libstdc++)
 
 add_subdirectory(ssl)
 
